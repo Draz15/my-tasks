@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "firstName": "mohammed",
+    "lastName": "sheta",
+    "age": "25",
+    "city": "alex"
+  },
+  {
+    "id": "2",
+    "firstName": "ali",
+    "lastName": "mahfouz",
+    "age": "15",
+    "city": "aswan"
+  },
+  {
+    "id": "3",
+    "firstName": "yara",
+    "lastName": "mohammed",
+    "age": "21",
+    "city": "tanta"
+  },
+  {
+    "id": "4",
+    "firstName": "abdo",
+    "lastName": "besher",
+    "age": "30",
+    "city": "cairo"
+  }
+]
