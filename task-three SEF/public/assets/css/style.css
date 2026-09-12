@@ -1,0 +1,26 @@
+body{
+    background-image: url("../../imgs/ffe9eaec7dbab1b5387439debcb3f7d8.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(4px);
+    min-height: fit-content;
+    padding: 30px 0;
+    display: flex;
+    background-color: #0034707a;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.data {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.data.open {
+    opacity: 1;
+    max-height: 500px;
+}

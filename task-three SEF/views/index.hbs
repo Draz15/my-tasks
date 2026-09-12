@@ -1,0 +1,181 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/assets/js/browser@4.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+
+    <div
+      class="card w-[35%] h-min-fit bg-[#1122bc83] px-3 py-6 rounded-2xl flex flex-col justify-center items-center gap-y-8"
+    >
+
+      <h2
+        class="flex text-white gap-x-4 items-center mb-6 text-3xl font-medium"
+      >
+        {{title}}
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-cloud-sun"
+          id="icon"
+        ><path d="M12 2v2" /><path d="m4.93 4.93 1.41 1.41" /><path
+            d="M20 12h2"
+          /><path d="m19.07 4.93-1.41 1.41" /><path
+            d="M15.947 12.65a4 4 0 0 0-5.925-4.128"
+          /><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z" /></svg>
+
+      </h2>
+
+      <form class="flex flex-col items-center gap-8 w-[70%]">
+        <input
+          type="text"
+          class="searchedCountry bg-white px-3 w-full inline-block py-2 ring-2 ring-transparent focus:ring-blue-900 rounded-xl outline-none transition-all"
+          placeholder="Enter Country name"
+        />
+
+        <input
+          type="submit"
+          class="btn bg-gradient-to-br from-sky-200 via-sky-400 to-sky-600 hover:bg-gradient-to-br hover:from-sky-400 hover:via-sky-500 hover:to-sky-600 font-medium rounded-2xl text-white px-8 py-2 hover:shadow-sm shadow-cyan-300 transition-all duration-300"
+          name=""
+          value="Get Weather"
+        />
+      </form>
+
+
+      {{!-- place data section  --}}
+
+
+      <div class="data flex flex-col items-center gap-6 p-3 w-full">
+
+
+        {{! location section  }}
+
+        <div
+          class="w-full p-6 h-14 flex gap-x-4 items-center rounded-2xl shadow-xl hover:scale-103 hover:shadow-2xl bg-[#0034707a] transition-all duration-300"
+        >
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-map-pin text-sky-200"
+          ><path
+              d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+            /><circle cx="12" cy="10" r="3" /></svg>
+
+          {{! context section }}
+
+          <div class="">
+            <p class="text-white text-lg">Country : <span class="text-gray-200 font-semibold country"></span></p>
+          </div>
+
+        </div>
+
+        {{! latitude section  }}
+
+        <div
+          class="w-full p-6 h-14 flex gap-x-4 items-center rounded-2xl shadow-xl hover:scale-103 hover:shadow-2xl bg-[#0034707a] transition-all duration-300"
+        >
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-globe text-sky-200"
+          ><circle cx="12" cy="12" r="10" /><path
+              d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"
+            /><path d="M2 12h20" /></svg>
+          {{! context section }}
+          <div class="">
+<p class="text-white text-lg">Latitude : <span class="text-gray-200 font-semibold latitude"></span></p>
+          </div>
+
+        </div>
+
+        {{! longitude section  }}
+        <div
+          class="w-full p-6 h-14 flex gap-x-4 items-center rounded-2xl shadow-xl hover:scale-103 hover:shadow-2xl bg-[#0034707a] transition-all duration-300"
+        >
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-globe text-sky-200"
+          ><circle cx="12" cy="12" r="10" /><path
+              d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"
+            /><path d="M2 12h20" /></svg>
+          {{! context section }}
+          <div class="">
+            <p class="text-white text-lg">Longitude : <span class="text-gray-200 font-semibold longitude"></span></p>
+          </div>
+
+        </div>
+
+        {{! temperature section  }}
+        <div
+          class="w-full p-6 h-14 flex gap-x-4 items-center rounded-2xl shadow-xl hover:scale-103 hover:shadow-2xl bg-[#0034707a] transition-all duration-300"
+        >
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-thermometer-sun text-sky-200"
+          ><path d="M12 2v2" /><path d="M12 8a4 4 0 0 0-1.645 7.647" /><path
+              d="M2 12h2"
+            /><path d="M20 14.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z" /><path
+              d="m4.93 4.93 1.41 1.41"
+            /><path d="m6.34 17.66-1.41 1.41" /></svg>
+          {{! context section }}
+          <div class="">
+            <p class="text-white text-lg">Temperature : <span class="text-gray-200 font-semibold temperature"></span></p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
